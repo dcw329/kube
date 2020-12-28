@@ -1,4 +1,4 @@
-package com.geocent.services.person;
+package com.danielstools.services.person;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

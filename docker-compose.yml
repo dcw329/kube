@@ -11,3 +11,38 @@ services:
     image: redis:alpine
     env_file:
       - .env-dev
+
+  person-service:
+    # build: person-service
+    image: person-service:latest
+    env_file:
+      - .env-dev
+    depends_on:
+      - postgres
+
+  counter-service:
+    build: counter-service
+    image: counter-service:latest
+    env_file:
+      - .env-dev
+    depends_on:
+      - redis
+
+  webapp:
+    build: webapp
+    image: webapp:latest
+    ports:
+      - "3000:3000/tcp"
+    depends_on: 
+      - person-service
+      - counter-service
+  
+  nginx:
+    build: nginx
+    image: nginx-proxy:latest
+    ports:
+      - "8000:8000/tcp"
+    depends_on:
+      - person-service
+      - counter-service
+      - webapp

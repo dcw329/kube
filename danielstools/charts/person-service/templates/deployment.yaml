@@ -1,0 +1,32 @@
+{{- if .Values.enabled }}
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: person-service
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: person-service
+  template:
+    metadata:
+      labels:
+        app: person-service
+    spec:
+      containers:
+        - name: person-service
+          image: gcr.io/daniels-tools/person-service:latest
+          ports:
+            - containerPort: 8080
+          # todo
+          env: 
+            - name: POSTGRES_HOST
+              value: postgres
+            - name: POSTGRES_USER
+              value: postgres
+            - name: POSTGRES_PASSWORD
+              value: postgres
+            - name: POSTGRES_PORT
+              value: "5432"
+          imagePullPolicy: Always
+{{- end }}

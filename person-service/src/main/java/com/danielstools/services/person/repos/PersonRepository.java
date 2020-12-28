@@ -1,6 +1,6 @@
-package com.geocent.services.person.repos;
+package com.danielstools.services.person.repos;
 
-import com.geocent.services.person.models.Person;
+import com.danielstools.services.person.models.Person;
 import java.util.ArrayList;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;

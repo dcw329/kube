@@ -1,7 +1,7 @@
-package com.geocent.services.person.controllers;
+package com.danielstools.services.person.controllers;
 
-import com.geocent.services.person.models.Person;
-import com.geocent.services.person.repos.PersonRepository;
+import com.danielstools.services.person.models.Person;
+import com.danielstools.services.person.repos.PersonRepository;
 import java.util.ArrayList;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;

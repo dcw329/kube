@@ -1,4 +1,4 @@
-# Geocent DevOps Code Challenge
+# DanielsTools DevOps Code Challenge
 
 ## The Challenge
 
@@ -7,6 +7,9 @@ The development teams on your project have been working on a set of microservice
 
 #### Part 2
 In addition, the team would like to use Kubernetes to deploy these services in continuous integration and production environments. Because `Docker for Mac` and `Docker for Windows` provides Kubernetes out-of-the-box, the team would like to be able to test their services locally in Kubernetes before progressing to CI pipelines. Your goal is to prepare Kubernetes configuration in order to deploy the services in a local Kubernetes cluster. If all services are configured correctly the `webapp` should look like the image below when rendered.
+
+#### Part 3
+After you get Kubernetes working locally, you may want to deploy the stack into the cloud on GKE. Additional tasks could include getting isto, prometheus, vault, and other services working with dashboards. 
 
 ![Ideal Scenario image](./ideal-scenario.png)
 
@@ -56,3 +59,7 @@ Web Browser Client --> nginx-proxy ---- webapp
 - Use `kubernetes`
 	- You may use `Docker for Mac` Kubernetes, `Docker for Windows` Kubernetes, or `minikube`
 	- For deployment tools, you may use `vanilla Kubernetes yaml`, `Helm`, `Kustomize`, or any other tool/scripting that you are comfortable with.
+
+## Part 3 - More Information and Requirements
+- To deploy into GKE you will need to create the initial cluster, and before deployment you will need to create a static IP to connect your services to for public access. `gcloud compute addresses create daniels-tools-kube-service-static-ip --global`. Don't forget to clean this up with `gcloud compute addresses delete daniels-tools-kube-service-static-ip --global`
+

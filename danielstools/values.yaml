@@ -1,0 +1,6 @@
+postgres:
+  enabled: true
+person-service:
+  enabled: true
+
+

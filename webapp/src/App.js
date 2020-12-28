@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import logo from './geocent.png';
+import logo from './danielstools.png';
 import './App.css';
 import axios from 'axios';
 
@@ -16,8 +16,8 @@ class App extends Component {
 
   componentDidMount() {
     // Kubernetes nginx service endpoint
-    let counterServiceApiEndpoint = "http://localhost:30500"
-    let personServiceApiEndpoint = "http://localhost:30500"
+    let counterServiceApiEndpoint = "http://kube.daniels.tools"
+    let personServiceApiEndpoint = "http://kube.daniels.tools"
     console.log(window.location.hostname)
     console.log(window.location.port)
     if (window.location.hostname === 'localhost' && window.location.port === '8000') {
@@ -42,7 +42,7 @@ class App extends Component {
       <div className="App">
         <header className="App-header">
           <img src={logo} className="App-logo" alt="logo" />
-          <h1>Geocent Code Challenge</h1>
+          <h1>DanielsTools Kube Service</h1>
 
           <h2>Counter service hit count: { this.state.counts }</h2>
           <h3>Person Service Persons</h3>

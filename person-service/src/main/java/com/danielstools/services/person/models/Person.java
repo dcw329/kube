@@ -1,4 +1,4 @@
-package com.geocent.services.person.models;
+package com.danielstools.services.person.models;
 
 import java.io.Serializable;
 import javax.persistence.Column;
